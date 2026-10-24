@@ -1,0 +1,46 @@
+{
+  "bookSourceUrl": "http://www.vvbiquge.org",
+  "bookSourceName": "笔趣阁VV",
+  "bookSourceType": 0,
+  "bookSourceGroup": "",
+  "bookSourceComment": "vvbiquge.org 笔趣阁镜像，注意：该站 HTTPS 被墙，书源必须用 http://，勿改 https",
+  "loginUrl": "",
+  "bookSourceCookie": "",
+  "header": "User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+  "charset": "UTF-8",
+  "enabled": true,
+  "lastUpdateTime": 0,
+  "customOrder": 0,
+  "weight": 0,
+  "searchUrl": "http://www.vvbiquge.org/search0c.html?searchkey={{key}}",
+  "exploreUrl": "http://www.vvbiquge.org/sort/xuanhuan/{{page}}.html::玄幻小说\nhttp://www.vvbiquge.org/sort/xiuzhen/{{page}}.html::修真小说\nhttp://www.vvbiquge.org/sort/dushi/{{page}}.html::都市小说\nhttp://www.vvbiquge.org/sort/chuanyue/{{page}}.html::穿越小说\nhttp://www.vvbiquge.org/sort/wangyou/{{page}}.html::网游小说\nhttp://www.vvbiquge.org/sort/kehuan/{{page}}.html::科幻小说\nhttp://www.vvbiquge.org/sort/qita/{{page}}.html::其他小说",
+  "ruleExplore": {
+    "bookList": "//div[contains(@class,'lastupdate')]//div[@class='list-out']",
+    "name": ".//span[contains(@class,'flex')]/em[2]/a/text()",
+    "author": ".//span[contains(@class,'gray')]/text()",
+    "bookUrl": ".//span[contains(@class,'flex')]/em[2]/a/@href"
+  },
+  "ruleSearch": {
+    "bookList": "//div[@class='category-div']",
+    "bookUrl": ".//div[contains(@class,'commend-title')]/a/@href",
+    "name": ".//h3/text()",
+    "author": ".//div[contains(@class,'commend-title')]/span/text()",
+    "intro": ".//div[contains(@class,'intro')]/text()",
+    "coverUrl": ".//img/@data-original"
+  },
+  "ruleBookInfo": {
+    "name": "//meta[@property='og:novel:book_name']/@content",
+    "author": "//meta[@property='og:novel:author']/@content",
+    "intro": "//meta[@property='og:description']/@content",
+    "coverUrl": "//meta[@property='og:image']/@content",
+    "catalogUrl": ""
+  },
+  "ruleToc": {
+    "chapterList": "//div[contains(@class,'info-chapters-title')][strong[contains(text(),'正文')]]/following-sibling::div[contains(@class,'info-chapters')]/a",
+    "chapterName": "text()",
+    "chapterUrl": "@href"
+  },
+  "ruleContent": {
+    "content": "//article[@id='article']"
+  }
+}
