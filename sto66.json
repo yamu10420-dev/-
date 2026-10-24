@@ -1,0 +1,38 @@
+{
+  "bookSourceUrl": "https://www.sto66.com",
+  "bookSourceName": "思兔阅读",
+  "bookSourceType": 0,
+  "bookSourceGroup": "",
+  "bookSourceComment": "sto66.com 思兔阅读 · 搜索/详情/目录/正文已实测验证",
+  "loginUrl": "",
+  "bookSourceCookie": "",
+  "header": "User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+  "charset": "UTF-8",
+  "enabled": true,
+  "lastUpdateTime": 0,
+  "customOrder": 0,
+  "weight": 0,
+  "searchUrl": "https://www.sto66.com/search/{{key}}.html",
+  "ruleSearch": {
+    "bookList": "//div[@class='bookbox']",
+    "bookUrl": ".//h2[contains(@class,'bookname')]/a/@href",
+    "name": ".//h2[contains(@class,'bookname')]/a/text()",
+    "author": ".//div[contains(@class,'author')][1]/text()##作者：##",
+    "intro": ".//div[contains(@class,'update')]/text()##简介：##"
+  },
+  "ruleBookInfo": {
+    "name": "//h1[contains(@class,'booktitle')]/text()",
+    "author": "//p[contains(@class,'booktag')]/a[1]/text()",
+    "intro": "//p[contains(@class,'bookintro')]/text()",
+    "coverUrl": "//img[contains(@class,'thumbnail')]/@src",
+    "catalogUrl": "//a[contains(text(),'查看全部章节')]/@href"
+  },
+  "ruleToc": {
+    "chapterList": "//div[@id='allchapter']/dl/dd/a",
+    "chapterName": "text()",
+    "chapterUrl": "@href"
+  },
+  "ruleContent": {
+    "content": "//div[@id='content']##武动乾坤##"
+  }
+}
