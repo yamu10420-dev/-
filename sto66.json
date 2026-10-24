@@ -1,38 +1,48 @@
 {
-  "bookSourceUrl": "https://www.sto66.com",
+  "bookSourceComment": "思兔阅读(sto66.com)书源，2026-10-24 ",
+  "bookSourceGroup": "小说",
   "bookSourceName": "思兔阅读",
   "bookSourceType": 0,
-  "bookSourceGroup": "",
-  "bookSourceComment": "sto66.com 思兔阅读 · 搜索/详情/目录/正文已实测验证",
-  "loginUrl": "",
-  "bookSourceCookie": "",
-  "header": "User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-  "charset": "UTF-8",
-  "enabled": true,
-  "lastUpdateTime": 0,
+  "bookSourceUrl": "https://www.sto66.com",
+  "bookUrlPattern": "",
   "customOrder": 0,
-  "weight": 0,
-  "searchUrl": "https://www.sto66.com/search/{{key}}.html",
-  "ruleSearch": {
-    "bookList": "//div[@class='bookbox']",
-    "bookUrl": ".//h2[contains(@class,'bookname')]/a/@href",
-    "name": ".//h2[contains(@class,'bookname')]/a/text()",
-    "author": ".//div[contains(@class,'author')][1]/text()##作者：##",
-    "intro": ".//div[contains(@class,'update')]/text()##简介：##"
-  },
-  "ruleBookInfo": {
-    "name": "//h1[contains(@class,'booktitle')]/text()",
-    "author": "//p[contains(@class,'booktag')]/a[1]/text()",
-    "intro": "//p[contains(@class,'bookintro')]/text()",
-    "coverUrl": "//img[contains(@class,'thumbnail')]/@src",
-    "catalogUrl": "//a[contains(text(),'查看全部章节')]/@href"
-  },
-  "ruleToc": {
-    "chapterList": "//div[@id='allchapter']/dl/dd/a",
-    "chapterName": "text()",
-    "chapterUrl": "@href"
+  "enabled": true,
+  "enabledExplore": false,
+  "exploreUrl": "",
+  "header": "User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+  "lastUpdateTime": "2026-10-24",
+  "loginUrl": "",
+  "ruleBook": {
+    "author": "@css:p.booktag a.red@text",
+    "coverUrl": "@css:.bookcover img@src",
+    "init": "",
+    "intro": "@css:p.bookintro@text",
+    "kind": "@css:p.booktag a.blue@text",
+    "lastChapter": "@css:p a.bookchapter@text",
+    "name": "@css:h1.booktitle@text",
+    "tocUrl": "@css:#allchapter dd:last-child a@href"
   },
   "ruleContent": {
-    "content": "//div[@id='content']##武动乾坤##"
-  }
+    "content": "@css:#content@textNodes",
+    "nextContentUrl": ""
+  },
+  "ruleExplore": {},
+  "ruleSearch": {
+    "author": "@css:.author@text@js:result.replace('作者：','')",
+    "bookList": "@css:.bookbox",
+    "bookUrl": "@css:h2.bookname a@href",
+    "coverUrl": "",
+    "intro": "@css:.update@text@js:result.replace(/^简介：/,'')",
+    "kind": "",
+    "lastChapter": "@css:.cat a@text",
+    "name": "@css:h2.bookname a@text"
+  },
+  "ruleToc": {
+    "chapterList": "@css:#allchapter dd",
+    "chapterName": "@css:a@text",
+    "chapterUrl": "@css:a@href",
+    "nextTocUrl": "@css:#linkNext@href"
+  },
+  "searchUrl": "https://www.sto66.com/search/{{key}}/{{page}}.html",
+  "weight": 0
 }
